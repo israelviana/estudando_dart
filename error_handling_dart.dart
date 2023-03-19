@@ -9,13 +9,21 @@ void errorHandling() {
 
   try { //tentar alguma coisa
     login.logar();
+
   } on CustomError catch(e){
     print('Senha errada!');
+
   } catch(e, stackStrace) { //capturar falha
     print("quaisquer outros tipos de erro");
+
     //throw Exception("Ocorreu um erro xpto"); //retornar um novo erro
     //rethrow; //propagar o erro 
+
+  } finally { //Sempre executa o finally
+    print('finalizou');
+    
   }
+
 }
 
 class Login {
